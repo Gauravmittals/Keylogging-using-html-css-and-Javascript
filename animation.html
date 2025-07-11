@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        background: red;
+        height: 400px;
+        width: 400px;
+        border: 2px solid black;
+        border-radius: 5%;
+        position: relative;
+      }
+      .inner-container {
+        background: blue;
+        height: 100px;
+        width: 100px;
+        border: 2px solid black;
+        border-radius: 15%;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <ul>
+      <li class="hero" id="hi">Hello</li>
+      <li class="hero">How</li>
+      <li class="qs">Are</li>
+      <li class="qs">YOu</li>
+    </ul> -->
+
+    <div class="container">
+      <div class="inner-container"></div>
+    </div>
+    <button onclick="myMove()">Animate front</button>
+    <button onclick="backMove()">Animate front</button>
+    <script>
+      function myMove() {
+        let pos = 0;
+        const ele = document.getElementsByClassName("inner-container")[0];
+        const id = setInterval(frame, 1);
+        function frame() {
+          if (pos == 295) {
+            clearInterval(id);
+          }
+
+          pos++;
+          ele.style.top = pos + "px";
+          ele.style.left = pos + "px";
+        }
+      }
+    </script>
+  </body>
+</html>
